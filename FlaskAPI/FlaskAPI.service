@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask Api daemon
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /apidirectory/run_daam.sh
+WorkingDirectory=/apidirectory/
+Environment=API_KEY=987654321
+Environment=API_PASS=drowssap
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=sysinit.target
