@@ -1,0 +1,14 @@
+[Unit]
+Description=Liga Palma django app daemon
+
+[Service]
+Type=simple
+ExecStart=/bin/sh /media/DATA/DEV/githubProjects/djangoProjects/ligaPalma/run_liga.sh
+WorkingDirectory=/media/DATA/DEV/githubProjects/djangoProjects/ligaPalma/
+Environment=API_KEY=087654321
+Environment=API_PASS=drowssap
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=sysinit.target
