@@ -1,5 +1,6 @@
 *~
-.ideia
+.idea
+FlaskAPI.zip
 *.xml
 *.py[cod]
 codestyles
@@ -9,4 +10,4 @@ DEADJOE
 *.log
 *.pot
 *.pyc
-__pycache__/
+__pycache__
