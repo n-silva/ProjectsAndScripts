@@ -2,7 +2,7 @@ Project is about a Flask Api, using Selenium driver with PhantonJS to webscrap w
 The API call be call from any language using a AESCipher 16Bit key for encryption, and on this sample I'm using a java/android App to scrap info from fenix and return data to a mobile app.
 
 
-
+~~~~~~~~
 Steps for Ubuntu Server (Systemd):
     	- made the necessary changes to FlaskAPI.service file
 	- copy FlaskAPI.service into /etc/systemd/system/
