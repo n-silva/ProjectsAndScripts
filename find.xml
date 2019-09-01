@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'docker_flask_webapp'" />
-    <option name="defaultScopeName" value="Project 'docker_flask_webapp'" />
-    <option name="SEARCH_SCOPE" value="Project 'docker_flask_webapp'" />
+    <option name="customScope" value="Directory '...'" />
+    <option name="defaultScopeName" value="Directory '...'" />
+    <option name="SEARCH_SCOPE" value="Directory '...'" />
   </component>
 </application>
