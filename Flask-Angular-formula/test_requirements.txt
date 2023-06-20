@@ -1,0 +1,10 @@
+# these packages are used to automate unit tests
+atomicwrites==1.3.0
+attrs==19.1.0
+importlib-metadata==0.21
+more-itertools==7.2.0
+packaging==19.1
+pluggy==0.13.0
+py==1.8.0
+pyparsing==2.4.2
+pytest==5.1.2

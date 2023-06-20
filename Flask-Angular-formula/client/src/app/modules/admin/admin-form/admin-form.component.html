@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+  <b>Function:</b> {{ functdata.name }}
+</div>
+
+<form #form="ngForm" mat-dialog-content>
+  <div class="row">
+    <mat-form-field class="col-xs-12">
+      <input matInput required placeholder="Name" [(ngModel)]="command.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field class="col-xs-12">
+    <input matInput required placeholder="Function" [(ngModel)]="command.function" name="function">
+    </mat-form-field>
+
+    <h4 class="col-xs-12">Description</h4>
+    <mat-form-field class="col-xs-12">
+      <input matInput placeholder="Description" [(ngModel)]="command.description" name="description">
+    </mat-form-field>
+  </div>
+</form>
+
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" class="button-flat" (click)="onNoClick()" style="padding: 2px;margin:2px;">Cancel</button>
+
+  <button mat-flat-button color="accent" class="button-flat" (click)="save()" style="padding: 2px;margin: 2px;">
+    Save
+  </button>
+</div>

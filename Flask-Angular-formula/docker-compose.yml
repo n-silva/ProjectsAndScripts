@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    container_name: formula_db
+    image: postgres:12.1-alpine
+    volumes:
+      - ./data:/var/lib/postgresql/data/
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=formula_dev
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    container_name: formula_web
+    command: python app.py runserver -p=5000 -h=0.0.0.0
+    volumes:
+      - .:/app
+    environment:
+      - APP_SETTINGS=server.config.DevelopmentConfig
+      - SECRET_KEY="6aaGV2dQnDCgAoLMyQB"
+    ports:
+      - 5000:5000
+
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

@@ -1,0 +1,21 @@
+<div style="width: 80%;margin: auto;text-align: center;margin-top: 20px;">
+  <mat-form-field appearance="fill" class="col-xs-12" >
+    <mat-label>Math function</mat-label>
+    <input matInput  required placeholder="Enter a function" #formula>
+    <mat-icon matSuffix>calc</mat-icon>
+    <mat-hint>Auto eval expression</mat-hint>
+  </mat-form-field>
+  <mat-list class="col-xs-12">
+    <mat-list-item><div class="col-xs-12 col-sm-3" style="margin-left:-30px;text-align: left;max-width: 20%!important;"><b>Expression:</b></div>
+      <div class="col-xs-12 col-sm-9" style="text-align: right;!important;">{{func}}</div></mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><div class="col-xs-12 col-sm3" style="margin-left:-30px;text-align: left;max-width: 20%!important;"><b>Result:</b></div>
+      <div class="col-xs-12 col-sm-9" style="text-align:right;!important;">{{result}}</div></mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+  <button mat-flat-button color="primary" (click)="calculate(formula.value)" style="align-content: center!important;">
+    Calculate
+  </button>
+</div>
+

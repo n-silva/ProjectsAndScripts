@@ -1,0 +1,70 @@
+<div class="container-fluid row top-xs" style="overflow-x: hidden; padding-bottom: 10px;">
+  <div class="col-xs-12 center-block col-md-12 table-responsive">
+    <h2 style="min-width:50vh;text-align: center;position: center;">Function List</h2>
+    <div class="col-xs-12">
+      <mat-toolbar style="background-color: transparent; padding-left: 0">
+        <span style="flex: 1 1 auto;"></span>
+        <button mat-mini-fab color="accent" (click)="createNew()" >
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-toolbar>
+    </div>
+
+    <ng-container>
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. f5" #input>
+      </mat-form-field>
+      <table mat-table [dataSource]="datasource" class="col-xs-12 mat-elevation-z1">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element" style="width: 5%"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element" style="width: 25%"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element" style="width: 20%"> {{element.description}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="function">
+          <th mat-header-cell *matHeaderCellDef> Function </th>
+          <td mat-cell *matCellDef="let element" style="width: 30%"> {{element.function}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+          <td mat-cell *matCellDef="let item" style="width: 10%">
+            <button mat-button color="primary" (click)="edit(item)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-button style="color: red;" (click)="delete(item)">
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="cols"></tr>
+        <tr mat-row *matRowDef="let row; columns: cols;" style="width: 5%"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[ 5, 10, 20]" showFirstLastButtons class="col-xs-12"></mat-paginator>
+
+    </ng-container>
+  </div>
+</div>
