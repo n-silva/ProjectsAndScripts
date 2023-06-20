@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS challenge;
+USE challenge;
+
+CREATE TABLE IF NOT EXISTS word_ranking (
+  id INT(20) PRIMARY KEY,
+  word VARCHAR(200) NOT NULL,
+  freqcount INT(11) NOT NULL
+);

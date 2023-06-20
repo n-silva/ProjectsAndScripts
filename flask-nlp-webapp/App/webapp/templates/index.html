@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter a URL</title>
+</head>
+<body>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+    <form action="/" method="POST">
+            <input type="text" name="url" placeholder="Type url ..." required class="search">
+            <input type="submit" value="Load Url" class="btn">
+            {% if error %} <span class="error"><b> {{ error}}</b></span> {% endif %}
+    </form>
+
+    {% if wordsdict %}
+    <div style="align:center;text-align:center; margin-bottom: 40px;margin-top: 40px;">
+        <a  class="btn" href="{{ url_for('admin') }}">View saved words on database </a>
+        <h1>Word Frequency Count - TOP 100 </h1>
+    </div>
+
+    <table id="raking" style="width:80%">
+        <tbody>
+        <tr>
+            <th>Word</th>
+            <th>Total word count</th>
+        </tr>
+        {% for item in wordsdict %}
+            <tr>
+                <td> {{ item }}</td>
+                <td> {{wordsdict[item]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+{% endblock %}
+</body>
+</html>

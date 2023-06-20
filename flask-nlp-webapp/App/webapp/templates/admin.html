@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Words Ranking</title>
+
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<body>
+
+<div style="align:center;text-align:center; margin-bottom: 40px;"> <h1>Word Frequency Count</h1>   <a class="btn"  href="{{ url_for('home') }}">Home</a></div>
+
+    {% if wordsdict %}
+    <table id="raking">
+        <tbody>
+        <tr>
+            <th></th>
+            <th>Word</th>
+            <th>Total word count</th>
+        </tr>
+        {% for row in wordsdict.items %}
+            <tr>
+                <td> {{ row.id }}</td>
+                <td> {{ row.word }}</td>
+                <td> {{ row.freqcount }}</td>
+            </tr>
+        {% endfor %}
+        <tr style="background-color: #dddddd;">
+         <td colspan="3" style="text-align:center">
+                    <div class="pagination">
+                        <span style="float:left">
+                        {% if wordsdict.has_prev %}
+                          <a  class="btn" href="{{ url_for('admin', page=wordsdict.prev_num) }}">Previous</a>
+                        {% else %}
+                         <a class="disabled" href="#">Previous</a>
+                        {% endif %}
+                        </span>
+                        <span style="float:right">
+                        {% if wordsdict.has_next %}
+                         <a  class="btn" href="{{ url_for('admin', page=wordsdict.next_num) }}">Next</a>
+                        {% else %}
+                          <a class="disabled" href="#">Next</a>
+                        {% endif %}
+                        </span>
+                    </div>
+         </td>
+     </tr>
+        </tbody>
+    </table>
+
+    {% endif %}
+</body>
+
+</html>
