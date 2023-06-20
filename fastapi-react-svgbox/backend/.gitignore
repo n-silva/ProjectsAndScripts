@@ -1,0 +1,14 @@
+*~
+.idea
+FlaskAPI.zip
+*.xml
+*.py[cod]
+codestyles
+colors
+_linux
+DEADJOE
+*.log
+*.pot
+*.pyc
+__pycache__
+.pytest_cache

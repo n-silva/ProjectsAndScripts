@@ -1,0 +1,15 @@
+asyncio==3.4.3
+databases[sqlite]==0.6.2
+fastapi==0.92.0
+pydantic==1.10.6 
+sqlmodel==0.0.8
+strawberry-graphql==0.159.1
+uvicorn[standard]==0.20.0
+wheel==0.38.4
+
+# Dev
+black==23.1.0
+httpx==0.23.3
+pylint==2.16.4
+pytest==7.2.2
+pytest-asyncio==0.20.3

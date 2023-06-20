@@ -1,0 +1,13 @@
+type Query
+{
+   boxshape,
+   boxShapes,
+}
+
+type Mutation
+{
+   addBoxShape,
+   boxShapes,
+   delBoxShape,
+   delAllBoxShape,
+}
