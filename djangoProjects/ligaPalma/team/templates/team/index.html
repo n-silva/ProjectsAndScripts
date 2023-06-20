@@ -1,9 +1,0 @@
-{% if team_list %}
-    <ul>
-    {% for team in team_list %}
-        <li><a href="/team/{{ team.id }}/">{{ team.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No team are available.</p>
-{% endif %}
